@@ -1,10 +1,5 @@
 const mongoose = require('mongoose');
 
-//gacs gacs
-
-// use MONGO_DIRECT_URI if want to connect on mongodb external service
-//mongodb+srv://gacs:<password>@cluster0.lxlyv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-
 // use MONGO__URI when want to connect the mongo inside container 
 const connectDB = async () => {
     try {
