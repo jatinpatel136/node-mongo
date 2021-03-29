@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+
+  node:
+    container_name: nodeapp-no-cache
+    image: nodeapp-no-cache
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - nodeapp-network
+    depends_on: 
+      - mongodb
+    links:
+      - mongodb
+      
+  mongodb:
+    container_name: mongodb-no-cache
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - nodeapp-network
+
+networks:
+  nodeapp-network:
+    driver: bridge
